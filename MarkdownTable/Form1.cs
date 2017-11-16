@@ -579,7 +579,7 @@
 		private void gridGrid_KeyDown(object sender, KeyEventArgs e)
 		{
 			switch(e.KeyCode) {
-				case Keys.Delete: 
+				case Keys.Delete:
 					{
 						foreach(var cell in this.gridGrid.SelectedCells.Cast<DataGridViewCell>()) {
 							cell.Value = string.Empty;
@@ -587,7 +587,7 @@
 					}
 					break;
 
-				case Keys.Back: 
+				case Keys.Back:
 					{
 						var cell = this.gridGrid.SelectedCells.OfType<DataGridViewCell>().SingleOrDefault();
 						if(cell != null) {
@@ -686,5 +686,22 @@
 				this.gridGrid.Rows.Remove(row);
 			}
 		}
-	}
+
+        private void toolGrid_itemCopy_Click(object sender, EventArgs e)
+        {
+            var s = ToMarkdown(MarkdownFormat.Bitbucket);
+            if(!string.IsNullOrWhiteSpace(s)) {
+                Clipboard.SetText(s);
+            }
+        }
+
+        private void toolGrid_itemPaste_Click(object sender, EventArgs e)
+        {
+            var s = Clipboard.GetText();
+            if(!string.IsNullOrWhiteSpace(s)) {
+                var markdown = s.Trim();
+                ToGrid(markdown, MarkdownFormat.Bitbucket);
+            }
+        }
+    }
 }
