@@ -27,6 +27,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabMain_pageMarkdown = new System.Windows.Forms.TabPage();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
@@ -55,6 +56,8 @@
             this.toolGrid_itemCopy = new System.Windows.Forms.ToolStripButton();
             this.toolGrid_itemPaste = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripContainer3 = new System.Windows.Forms.ToolStripContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tabMain.SuspendLayout();
             this.tabMain_pageMarkdown.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -67,6 +70,9 @@
             this.toolStripContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridGrid)).BeginInit();
             this.toolGrid.SuspendLayout();
+            this.toolStripContainer3.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer3.ContentPanel.SuspendLayout();
+            this.toolStripContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -77,7 +83,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(460, 262);
+            this.tabMain.Size = new System.Drawing.Size(460, 240);
             this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabMain.TabIndex = 0;
             this.tabMain.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabMain_Selecting);
@@ -161,7 +167,7 @@
             this.tabMain_pageGrid.Controls.Add(this.toolStripContainer2);
             this.tabMain_pageGrid.Location = new System.Drawing.Point(4, 22);
             this.tabMain_pageGrid.Name = "tabMain_pageGrid";
-            this.tabMain_pageGrid.Size = new System.Drawing.Size(452, 236);
+            this.tabMain_pageGrid.Size = new System.Drawing.Size(452, 214);
             this.tabMain_pageGrid.TabIndex = 1;
             this.tabMain_pageGrid.Text = "グリッド";
             this.tabMain_pageGrid.UseVisualStyleBackColor = true;
@@ -173,13 +179,13 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.gridGrid);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(452, 211);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(452, 189);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.LeftToolStripPanelVisible = false;
             this.toolStripContainer2.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer2.Name = "toolStripContainer2";
             this.toolStripContainer2.RightToolStripPanelVisible = false;
-            this.toolStripContainer2.Size = new System.Drawing.Size(452, 236);
+            this.toolStripContainer2.Size = new System.Drawing.Size(452, 214);
             this.toolStripContainer2.TabIndex = 0;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -196,7 +202,7 @@
             this.gridGrid.Location = new System.Drawing.Point(0, 0);
             this.gridGrid.Name = "gridGrid";
             this.gridGrid.RowTemplate.Height = 21;
-            this.gridGrid.Size = new System.Drawing.Size(452, 211);
+            this.gridGrid.Size = new System.Drawing.Size(452, 189);
             this.gridGrid.TabIndex = 0;
             this.gridGrid.SelectionChanged += new System.EventHandler(this.gridGrid_SelectionChanged);
             this.gridGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridGrid_KeyDown);
@@ -379,13 +385,44 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripContainer3
+            // 
+            // 
+            // toolStripContainer3.BottomToolStripPanel
+            // 
+            this.toolStripContainer3.BottomToolStripPanel.Controls.Add(this.statusStrip1);
+            // 
+            // toolStripContainer3.ContentPanel
+            // 
+            this.toolStripContainer3.ContentPanel.Controls.Add(this.tabMain);
+            this.toolStripContainer3.ContentPanel.Size = new System.Drawing.Size(460, 240);
+            this.toolStripContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer3.LeftToolStripPanelVisible = false;
+            this.toolStripContainer3.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer3.Name = "toolStripContainer3";
+            this.toolStripContainer3.RightToolStripPanelVisible = false;
+            this.toolStripContainer3.Size = new System.Drawing.Size(460, 262);
+            this.toolStripContainer3.TabIndex = 1;
+            this.toolStripContainer3.Text = "toolStripContainer3";
+            this.toolStripContainer3.TopToolStripPanelVisible = false;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(460, 22);
+            this.statusStrip1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 262);
-            this.Controls.Add(this.tabMain);
+            this.Controls.Add(this.toolStripContainer3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "まーくだうんてーぶる☆彡";
             this.tabMain.ResumeLayout(false);
             this.tabMain_pageMarkdown.ResumeLayout(false);
@@ -406,6 +443,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridGrid)).EndInit();
             this.toolGrid.ResumeLayout(false);
             this.toolGrid.PerformLayout();
+            this.toolStripContainer3.BottomToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer3.BottomToolStripPanel.PerformLayout();
+            this.toolStripContainer3.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer3.ResumeLayout(false);
+            this.toolStripContainer3.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -440,6 +482,8 @@
         private System.Windows.Forms.ToolStripButton toolGrid_itemCopy;
         private System.Windows.Forms.ToolStripButton toolGrid_itemPaste;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 
